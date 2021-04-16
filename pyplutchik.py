@@ -21,7 +21,6 @@ import matplotlib.pyplot as plt
 import descartes
 from math import sqrt, cos, sin, radians
 import numpy as np
-#import matplotlib.font_manager as fm
 from matplotlib import colors
 
 
@@ -1183,7 +1182,7 @@ def plutchik(scores,
         Axes to draw the coordinates.
         
     *font*:
-        Font of text. Default is Montserrat.
+        Font of text. Default is sans-serif.
         
     *fontweight*:
         Font weight of text. Default is light.
@@ -1242,9 +1241,6 @@ def plutchik(scores,
     
     # Managing fonts
     if not font:
-#        font = 'Montserrat'
-#        fm.fontManager.addfont('res/Montserrat-Regular.ttf')
-#        fm.fontManager.addfont('res/Montserrat-ExtraLight.ttf')
         font = 'sans-serif'
         
     
