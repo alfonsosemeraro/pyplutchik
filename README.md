@@ -9,6 +9,7 @@ In Pyplutchik users can just pass a dictionary as only parameter, where dictiona
 
 ![Example1](https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/example01.png)
 
+
 Users can represent also the three degrees of intensity for each emotion, just by providing a 3-dimensional iterable as value for each key in the dictionary. Each 3-dimensional value must sum somewhere between 0 and 1.
 
 ![Example2](https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/example02.png)
@@ -20,15 +21,16 @@ PyPlutchik also represents primary dyads, secondary dyads, tertiary dyads and op
 
 Integration with _matplotlib_ is easy, so PyPlutchik can be used for also for composed plots.
 
-![Full spectrum of emotions](https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/dyads_show.png)
+<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/dyads_show.png" alt="Full spectrum of emotions" style="width:500px;"/>
 
 
 ### A couple tricks
 
 One can focus on a subset of emotions, ignoring the remaining ones...
 
-![Highlight some emotions](https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/highlight_emotions.png)
+<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/highlight_emotions.png" alt="Highlight some emotions" style="width:500px;"/>
 
 ... or can hide coordinates, ticks and labels, plotting only the petals of the flower
-![No coordinates or axis or labels: small-multiples!](https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/imdb_full.png)
+<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/imdb_full.png" alt="Small multiple" style="width:500px;"/>
+
 
