@@ -21,16 +21,16 @@ PyPlutchik also represents primary dyads, secondary dyads, tertiary dyads and op
 
 Integration with _matplotlib_ is easy, so PyPlutchik can be used for also for composed plots.
 
-![Full spectrum of emotions](https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/dyads_show.png)
+<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/dyads_show.png" alt="Full spectrum of emotions" width="500"/>
 
 
 ### A couple tricks
 
 One can focus on a subset of emotions, ignoring the remaining ones...
 
-<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/highlight_emotions.png" alt="Highlight some emotions" width="100"/>
+<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/highlight_emotions.png" alt="Highlight some emotions" width="500"/>
 
 ... or can hide coordinates, ticks and labels, plotting only the petals of the flower
-<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/imdb_full.png" alt="Small multiple" width="50"/>
+<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/imdb_full.png" alt="Small multiple" width="500"/>
 
 
