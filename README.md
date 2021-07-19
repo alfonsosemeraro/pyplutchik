@@ -28,9 +28,9 @@ Integration with _matplotlib_ is easy, so PyPlutchik can be used for also for co
 
 One can focus on a subset of emotions, ignoring the remaining ones...
 
-<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/highlight_emotions.png" alt="Highlight some emotions" style="width:100"/>
+<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/highlight_emotions.png" alt="Highlight some emotions" width="100"/>
 
 ... or can hide coordinates, ticks and labels, plotting only the petals of the flower
-<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/imdb_full.png" alt="Small multiple" style="width:100"/>
+<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/imdb_full.png" alt="Small multiple" width="50"/>
 
 
