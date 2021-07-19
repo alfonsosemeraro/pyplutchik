@@ -21,7 +21,7 @@ PyPlutchik also represents primary dyads, secondary dyads, tertiary dyads and op
 
 Integration with _matplotlib_ is easy, so PyPlutchik can be used for also for composed plots.
 
-<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/dyads_show.png" alt="Full spectrum of emotions" style="width:500px;"/>
+![Full spectrum of emotions](https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/dyads_show.png=300)
 
 
 ### A couple tricks
