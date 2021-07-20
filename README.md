@@ -42,13 +42,13 @@ In Pyplutchik users can just pass a dictionary as only parameter, where dictiona
 
 
 
-Users can represent also the three degrees of intensity for each emotion, just by providing a 3-dimensional iterable as value for each key in the dictionary. Each 3-dimensional value must sum somewhere between 0 and 1.
+Users can represent also the three degrees of intensity for each emotion, just by providing a 3-dimensional iterable as value for each key in the dictionary. The sum of the components of each 3-dimensional val must be between 0 and 1.
 
 <img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/example02.png" alt="Example 2" width="650"/>
 
 
 
-PyPlutchik also represents primary dyads, secondary dyads, tertiary dyads and opposite emotions. It automatically understand what kind of dyad users want to display from the dictionary's keywords.
+PyPlutchik also represents primary dyads, secondary dyads, tertiary dyads and opposite emotions. It automatically understands what kind of dyad users want to display from the dictionary's keywords.
 
 <img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/example03.png" alt="Example 3" width="650"/>
 
@@ -62,12 +62,12 @@ Integration with _matplotlib_ is easy, so PyPlutchik can be used for also for co
 
 ### A couple tricks
 
-One can focus on a subset of emotions, ignoring the remaining ones...
+One can focus on a subset of emotions, ignoring the remaining ones, passing a list of emotions as value of the parameter `highlight_emotions`:
 
 <img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/highlight_emotions.png" alt="Highlight some emotions" width="500"/>
 
 
-... or can hide coordinates, ticks and labels, plotting only the petals of the flower
+Or can hide coordinates, ticks and labels, plotting only the petals of the flower, using the parameters `show_coordinates = False` and `show_ticklabels = False`:
 
 <img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/imdb_full.png" alt="Small multiple" width="500"/>
 
