@@ -44,7 +44,7 @@ In Pyplutchik users can just pass a dictionary as only parameter, where dictiona
 
 Users can represent also the three degrees of intensity for each emotion, just by providing a 3-dimensional iterable as value for each key in the dictionary. Each 3-dimensional value must sum somewhere between 0 and 1.
 
-<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/example02.png" alt="Example 2" width="650"/>
+<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/example02.png" alt="Example 2" width="500"/>
 
 
 
