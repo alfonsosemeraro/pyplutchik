@@ -44,7 +44,7 @@ In Pyplutchik users can just pass a dictionary as only parameter, where dictiona
 
 Users can represent also the three degrees of intensity for each emotion, just by providing a 3-dimensional iterable as value for each key in the dictionary. Each 3-dimensional value must sum somewhere between 0 and 1.
 
-<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/example02.png" alt="Example 2" width="500"/>
+<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/example02.png" alt="Example 2" width="650"/>
 
 
 
@@ -57,7 +57,7 @@ PyPlutchik also represents primary dyads, secondary dyads, tertiary dyads and op
 
 Integration with _matplotlib_ is easy, so PyPlutchik can be used for also for composed plots.
 
-<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/dyads_show.png" alt="Full spectrum of emotions" width="500"/>
+<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/dyads_show.png" alt="Full spectrum of emotions" width="400"/>
 
 
 ### A couple tricks
