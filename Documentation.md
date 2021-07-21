@@ -7,21 +7,21 @@ PyPlutchik is a Python module specifically designed for the visualisation of [Pl
 PyPlutchik is a small module with just one function:
 
 ```python
-pyplutchik.plutchik( scores, 
-					 ax = None,
-					 font = None, 
-					 fontweight = 'light', 
-					 fontsize = 15, 
-					 show_coordinates = True, 
-					 show_ticklabels = False, 
-					 highlight_emotions = 'all', 
-					 show_intensity_labels = 'none', 
-					 ticklabels_angle = 0, 
-					 ticklabels_size = 11, 
-					 height_width_ratio = 1, 
-					 title = None, 
-					 title_size = None, 
-					 normalize = False )
+pyplutchik.plutchik( scores,
+		     ax = None,
+		     font = None, 
+		     fontweight = 'light',
+		     fontsize = 15, 
+		     show_coordinates = True, 
+		     show_ticklabels = False, 
+		     highlight_emotions = 'all', 
+		     show_intensity_labels = 'none',
+		     ticklabels_angle = 0, 
+		     ticklabels_size = 11, 
+		     height_width_ratio = 1, 
+		     title = None, 
+		     title_size = None, 
+		     normalize = False )
 ```
 
 
@@ -80,7 +80,7 @@ A numeric. It scales the the drawing area to a new value. If `normalize = 0.5`, 
  
 **Returns:**
 
-* ** ax:**
+* **ax:**
 The matplotlib.axes where the flower has been drawed on, for possible further customization. 
 
 
