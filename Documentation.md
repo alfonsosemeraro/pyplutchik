@@ -29,6 +29,7 @@ pyplutchik.plutchik( scores,
 
 **Parameters:**
 * **scores:**
+
  A dictionary with emotions or dyads. 
         For each entry, values accepted are a 3-values iterable (for emotions only) or a scalar value between 0 and 1.
         The sum of the 3-values iterable values must not exceed 1, and no value should be negative.
