@@ -72,3 +72,6 @@ Or can hide coordinates, ticks and labels, plotting only the petals of the flowe
 <img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/imdb_full.png" alt="Small multiple" width="500"/>
 
 
+## Full documentation
+
+For a documentation of all parameters and a gallery of examples see [the documentation](https://github.com/alfonsosemeraro/pyplutchik/blob/master/Documentation.md).
