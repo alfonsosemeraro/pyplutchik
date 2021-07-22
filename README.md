@@ -60,7 +60,7 @@ Integration with [matplotlib](https://matplotlib.org/) is easy, so PyPlutchik ca
 <img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/dyads_show.png" alt="Full spectrum of emotions" width="400"/>
 
 
-### A couple tricks
+### A couple of tricks
 
 One can focus on a subset of emotions, ignoring the remaining ones, passing a list of emotions as value of the parameter `highlight_emotions`:
 
