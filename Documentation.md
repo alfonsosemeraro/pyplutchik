@@ -112,7 +112,7 @@ emotions_simple = {
 plutchik(emotions_simple) # scores = emotions_simple
 ```
 
-<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/documentation/01.png" alt="Simple plot" width="280"/>
+<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/documentation/01.png" alt="Simple plot" width="350"/>
 
 
 Emotions can also be detailed in 3 degrees of intensity each:
@@ -135,7 +135,7 @@ emotions_degrees = {
 plutchik(emotions_degrees) # scores = emotions_degrees
 ```
 
-<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/documentation/02.png" alt="Degrees of intensity" width="280"/>
+<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/documentation/02.png" alt="Degrees of intensity" width="350"/>
 
 
 **Simple integration with matplotlib: _ax_**
@@ -164,7 +164,7 @@ from pyplutchik import plutchik
 plutchik(emotions_simple, font = 'Roboto', fontweight = 'bold', fontsize = 8)
 ```
 
-<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/documentation/04.png" alt="Fonts" width="280"/>
+<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/documentation/04.png" alt="Fonts" width="350"/>
 
 
 **Small-multi: _show_coordinates_**
@@ -177,7 +177,7 @@ from pyplutchik import plutchik
 plutchik(emotions_simple, show_coordinates = False)
 ```
 
-<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/documentation/05.png" alt="No coordinates" width="280"/>
+<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/documentation/05.png" alt="No coordinates" width="350"/>
 
 
 This features comes handy when plotting small-multiples (here we just repeated the same flower over and over... you should change scores every time!)
@@ -195,7 +195,7 @@ for i in range(16):
 	plutchik(emotions_simple, ax = plt.gca(), show_coordinates = False)
 ```
 
-<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/documentation/06.png" alt="Small multi" width="800"/>
+<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/documentation/06.png" alt="Small multi" width="700"/>
 
 
 
@@ -209,7 +209,7 @@ from pyplutchik import plutchik
 plutchik(emotions_simple, show_ticklabels = True, ticklabels_angle = 15)
 ```
 
-<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/documentation/07.png" alt="Ticks" width="280"/>
+<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/documentation/07.png" alt="Ticks" width="350"/>
 
 
 **Zoom and focus: _highlight_emotions_, _show_intensity_labels_**
@@ -228,7 +228,7 @@ plutchik(emotions_degrees, ax = ax[2], highlight_emotions = ['anticipation', 'tr
 
 ```
 
-<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/documentation/08.png" alt="Highlight" width="900"/>
+<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/documentation/08.png" alt="Highlight" width="1000"/>
 
 
 **Petal proportion: _height_width_ratio_**
@@ -260,7 +260,7 @@ plutchik(emotions_simple, title = "Random\ntitle", title_size = 24)
 
 ```
 
-<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/documentation/10.png" alt="Title" width="280"/>
+<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/documentation/10.png" alt="Title" width="350"/>
 
 
 **Rescaling petal length: _normalize_**
