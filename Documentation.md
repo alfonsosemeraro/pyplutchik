@@ -151,7 +151,7 @@ plutchik(emotions_simple, ax[0])
 plutchik(emotions_degrees, ax[1])
 ```
 
-<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/documentation/03.png" alt="Matplotlib composition" width="600"/>
+<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/documentation/03.png" alt="Matplotlib composition" width="700"/>
 
 
 **Managing fonts: _font_, _fontweight_, _fontsize_**
@@ -195,7 +195,7 @@ for i in range(16):
 	plutchik(emotions_simple, ax = plt.gca(), show_coordinates = False)
 ```
 
-<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/documentation/06.png" alt="Small multi" width="500"/>
+<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/documentation/06.png" alt="Small multi" width="800"/>
 
 
 
@@ -228,7 +228,7 @@ plutchik(emotions_degrees, ax = ax[2], highlight_emotions = ['anticipation', 'tr
 
 ```
 
-<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/documentation/08.png" alt="Highlight" width="650"/>
+<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/documentation/08.png" alt="Highlight" width="900"/>
 
 
 **Petal proportion: _height_width_ratio_**
@@ -246,7 +246,7 @@ plutchik(emotions_simple, ax = ax[1], height_width_ratio = 0.7)
 
 ```
 
-<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/documentation/09.png" alt="Ratios" width="400"/>
+<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/documentation/09.png" alt="Ratios" width="700"/>
 
 
 **Managing the title: _title_, _title_size_**
@@ -289,4 +289,4 @@ plutchik(short_emotions, ax = ax[0])
 plutchik(short_emotions, ax = ax[1], normalize = 0.25)
 ```
 
-<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/documentation/11.png" alt="Scaling" width="400"/>
+<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/documentation/11.png" alt="Scaling" width="700"/>
