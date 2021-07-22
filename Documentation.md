@@ -29,18 +29,20 @@ pyplutchik.plutchik( scores,
 
 **Parameters:**
 * **scores:**
-&nbsp;&nbsp;&nbsp;&nbsp;A dictionary with emotions or dyads. 
+
+	A dictionary with emotions or dyads. 
         For each entry, values accepted are a 3-values iterable (for emotions only) or a scalar value between 0 and 1.
         The sum of the 3-values iterable values must not exceed 1, and no value should be negative.
-        See emo_params() and dyad_params() for accepted keys.
                 
 	> :warning: *Emotions and dyads are mutually exclusive. Different kinds of dyads are mutually exclusive.*
 
 * **ax:**
-&nbsp;&nbsp;&nbsp;&nbsp;matplotlib.axes to draw the flower on. Default is None: a new ax will be created.
+
+	matplotlib.axes to draw the flower on. Default is None: a new ax will be created.
 
 * **font:**
-&nbsp;&nbsp;&nbsp;&nbsp;Font of text. Default is sans-serif.
+
+	Font of text. Default is sans-serif.
 
 * **fontweight:**
 Font weight of text. Default is light.
