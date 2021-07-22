@@ -45,45 +45,58 @@ pyplutchik.plutchik( scores,
 	Font of text. Default is sans-serif.
 
 * **fontweight:**
-Font weight of text. Default is light.
+
+	Font weight of text. Default is light.
 
 * **fontsize:**
-Font size of text. Default is 15.
+
+	Font size of text. Default is 15.
 
 * **show_coordinates:**
-A boolean, wether to show polar coordinates or not.
+
+	A boolean, wether to show polar coordinates or not.
 
 * **show_ticklabels:**
-Boolean, wether to show tick labels under *Joy* petal. Default is False.
+
+	Boolean, wether to show tick labels under *Joy* petal. Default is False.
 
 * **ticklabels_angle:**
-How much to rotate tick labels from y=0. Value should be given in radians. Default is 0.
+
+	How much to rotate tick labels from y=0. Value should be given in radians. Default is 0.
 
 * **highlight_emotions:**
-A string or a list of main emotions to highlight. If a list of emotions is given, other emotions will be shadowed. Default is 'all'.
+
+	A string or a list of main emotions to highlight. If a list of emotions is given, other emotions will be shadowed. Default is 'all'.
 
 * **show_intensity_labels:**
-A string or a list of main emotions. It shows all three intensity scores for each emotion in the list, and for the others cumulative scores. Default is 'none'.
+
+	A string or a list of main emotions. It shows all three intensity scores for each emotion in the list, and for the others cumulative scores. Default is 'none'.
 
 * **ticklabels_size:**
-Size of tick labels. Default is 11.
+
+	Size of tick labels. Default is 11.
 
 * **height_width_ratio:**
-Ratio between height and width of the petal. Lower the ratio, thicker the petal. Default is 1.
+
+	Ratio between height and width of the petal. Lower the ratio, thicker the petal. Default is 1.
 
 * **title:**
-Title for the plot.
+	
+	Title for the plot.
 
 * **title_size:**
-Size of the title. Default is font_size.
+
+	Size of the title. Default is font_size.
 
 * **normalize:**
-A numeric. It scales the the drawing area to a new value. If `normalize = 0.5`, for instance, petals with height 0.5 will touch the drawing area border. Default is False, no rescaling (drawing area spans from 0 to 1).
+
+	A numeric. It scales the the drawing area to a new value. If `normalize = 0.5`, for instance, petals with height 0.5 will touch the drawing area border. Default is False, no rescaling (drawing area spans from 0 to 1).
  
 **Returns:**
 
 * **ax:**
-The matplotlib.axes where the flower has been drawed on, for possible further customization. 
+
+	The matplotlib.axes where the flower has been drawed on, for possible further customization. 
 
 
 <br/>
