@@ -99,19 +99,20 @@ The simplest way to use pyplutchik is to plot a *dict* of values in the classic 
 from pyplutchik import plutchik
 
 emotions_simple = {
-	'joy': 0.4,
-	'trust': 0.7,
-	'fear': 0.9,
-	'surprise': 0.6,
-	'sadness': 0.8,
-	'disgust': 0.5, 
-	'anger': 0.5,
-	'anticipation': 0.7
+	'joy': 1,
+	'trust': 0.6,
+	'fear': 0.7,
+	'surprise': 1,
+	'sadness': 1,
+	'disgust': 0.95, 
+	'anger': 0.64,
+	'anticipation': 1
 	}
 
 plutchik(emotions_simple) # scores = emotions_simple
 ```
 
+<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/documentation/01.png" alt="Simple plot" width="280"/>
 
 
 Emotions can also be detailed in 3 degrees of intensity each:
@@ -121,18 +122,21 @@ Emotions can also be detailed in 3 degrees of intensity each:
 from pyplutchik import plutchik
 
 emotions_degrees = {
-	'joy': [0.2, 0.1, 0.1],
-	'trust': [0.3, 0.1, 0.3],
-	'fear': [0.4, 0.2, 0.3],
-	'surprise': [0.1, 0.4, 0.1],
-	'sadness': [0.2, 0.3, 0.3],
-	'disgust': [0.1, 0.2, 0.2], 
-	'anger': [0.3, 0.1, 0.1],
-	'anticipation': [0.2, 0.2, 0.3]
+	'joy': [0.3, 0.2, 0.5],
+	'trust': [0.5, 0.1, 0.0],
+	'fear': [0.1, 0.4, 0.2],
+	'surprise': [0.15, 0.5, 0.35],
+	'sadness': [0, 0.5, 0.5],
+	'disgust': [0.4, 0.33, 0.22], 
+	'anger': [0.43, 0.12, 0.09],
+	'anticipation': [0.3, 0.5, 0.2]
 	}
 
 plutchik(emotions_degrees) # scores = emotions_degrees
 ```
+
+<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/documentation/02.png" alt="Degrees of intensity" width="280"/>
+
 
 **Simple integration with matplotlib: _ax_**
 
@@ -147,6 +151,9 @@ plutchik(emotions_simple, ax[0])
 plutchik(emotions_degrees, ax[1])
 ```
 
+<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/documentation/03.png" alt="Matplotlib composition" width="600"/>
+
+
 **Managing fonts: _font_, _fontweight_, _fontsize_**
 
 It is possible to use any font available in your system.
@@ -154,8 +161,11 @@ It is possible to use any font available in your system.
 ```python
 from pyplutchik import plutchik
 
-plutchik(emotions_simple, font = 'Comic Sans', fontweight = 'bold', fontsize = 8)
+plutchik(emotions_simple, font = 'Roboto', fontweight = 'bold', fontsize = 8)
 ```
+
+<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/documentation/04.png" alt="Fonts" width="280"/>
+
 
 **Small-multi: _show_coordinates_**
 
@@ -166,6 +176,9 @@ from pyplutchik import plutchik
 
 plutchik(emotions_simple, show_coordinates = False)
 ```
+
+<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/documentation/05.png" alt="No coordinates" width="280"/>
+
 
 This features comes handy when plotting small-multiples (here we just repeated the same flower over and over... you should change scores every time!)
 
@@ -182,6 +195,10 @@ for i in range(16):
 	plutchik(emotions_simple, ax = plt.gca(), show_coordinates = False)
 ```
 
+<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/documentation/06.png" alt="Small multi" width="500"/>
+
+
+
 **Ticks in polar coordinates: _show_ticklabels_, _ticklabels_angle_**
 
 Ticks can be added in order to mark a visual reference, for an easier understanding of the petal length. Ticks can be also rotated, if you don't want them to overlap on the _Joy_ petal.  
@@ -191,6 +208,9 @@ from pyplutchik import plutchik
 
 plutchik(emotions_simple, show_ticklabels = True, ticklabels_angle = 15)
 ```
+
+<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/documentation/07.png" alt="Ticks" width="280"/>
+
 
 **Zoom and focus: _highlight_emotions_, _show_intensity_labels_**
 
@@ -208,6 +228,9 @@ plutchik(emotions_degrees, ax = ax[2], highlight_emotions = ['anticipation', 'tr
 
 ```
 
+<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/documentation/08.png" alt="Highlight" width="650"/>
+
+
 **Petal proportion: _height_width_ratio_**
 
 Do you like thinner petals? Or do you prefer thicker shapes?
@@ -223,6 +246,9 @@ plutchik(emotions_simple, ax = ax[1], height_width_ratio = 0.7)
 
 ```
 
+<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/documentation/09.png" alt="Ratios" width="400"/>
+
+
 **Managing the title: _title_, _title_size_**
 
 How do we set a title to this plot?
@@ -234,6 +260,9 @@ plutchik(emotions_simple, title = "Random\ntitle", title_size = 24)
 
 ```
 
+<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/documentation/10.png" alt="Title" width="280"/>
+
+
 **Rescaling petal length: _normalize_**
 
 Unfortunately your emotion scores are very low: the highest score is 0.23!
@@ -244,14 +273,14 @@ from pyplutchik import plutchik
 import matplotlib.pyplot as plt
 
 short_emotions = {
-	'joy': 0.13,
+	'joy': 0.23,
 	'trust': 0.07,
 	'fear': 0.09,
 	'surprise': 0.16,
-	'sadness': 0.23,
-	'disgust': 0.14, 
+	'sadness': 0.13,
+	'disgust': 0.07, 
 	'anger': 0.15,
-	'anticipation': 0.07
+	'anticipation': 0.17
 	}
 
 fig, ax = plt.subplots( nrows = 1, ncols = 2, figsize = (17, 8) )
@@ -259,3 +288,5 @@ fig, ax = plt.subplots( nrows = 1, ncols = 2, figsize = (17, 8) )
 plutchik(short_emotions, ax = ax[0])
 plutchik(short_emotions, ax = ax[1], normalize = 0.25)
 ```
+
+<img src="https://github.com/alfonsosemeraro/pyplutchik/blob/master/img/documentation/11.png" alt="Scaling" width="400"/>
