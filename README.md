@@ -4,6 +4,8 @@ Python visualisation for Plutchik annotated corpora.
 
 PyPlutchik is a module for visualizing the emotional fingerprint of corpora and text annotated with the [Plutchik's model of emotions](https://en.wikipedia.org/wiki/Robert_Plutchik).
 
+🔥 PyPlutchik 2.0 is on its way! 🔥
+
 ### Installation
 
 Installation with pip:
@@ -75,3 +77,8 @@ Or can hide coordinates, ticks and labels, plotting only the petals of the flowe
 ## Full documentation
 
 For a documentation of all parameters and a gallery of examples see [the documentation](https://github.com/alfonsosemeraro/pyplutchik/blob/master/Documentation.md).
+
+
+
+🔥 PyPlutchik 2.0 is on its way! New features include extraction of emotions from texts and check against a non-topical Lexicon. Stay tuned... 🔥
+
