@@ -38,7 +38,7 @@ import warnings
 warnings.filterwarnings(
     action='ignore',
     category=DeprecationWarning,
-    module=r'shapely'
+    module='descartes'
 )
 
 __author__ = """Alfonso Semeraro (alfonso.semeraro@gmail.com)"""
