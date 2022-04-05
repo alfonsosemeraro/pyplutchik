@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Apr  5 17:22:13 2022
+
+@author: alfonso
+"""
+
 
 """
 **********
@@ -22,7 +30,16 @@ import descartes
 from math import sqrt, cos, sin, radians
 import numpy as np
 from matplotlib import colors
+import warnings
 
+
+## DeprecationWarnings from shapely are disabled
+## As suggested in https://shapely.readthedocs.io/en/latest/migration.html
+warnings.filterwarnings(
+    action='ignore',
+    category=DeprecationWarning,
+    module=r'shapely'
+)
 
 __author__ = """Alfonso Semeraro (alfonso.semeraro@gmail.com)"""
 __all__ = ['emo_params',
@@ -391,7 +408,7 @@ def _polar_coordinates(ax, font, fontweight, fontsize, show_ticklabels, ticklabe
         for x in np.arange(0.2, 1.2, .2):
             a = round(x, 1)
             x, y = _rotate_point((0, a + offset), ticklabels_angle) #-.12
-            ax.annotate(s = str(a), xy = (x, y),  fontfamily = font, size = ticklabels_size, fontweight = fontweight, zorder = 8, rotation = ticklabels_angle)
+            ax.annotate(str(a), xy = (x, y),  fontfamily = font, size = ticklabels_size, fontweight = fontweight, zorder = 8, rotation = ticklabels_angle)
     return ax
 
 
@@ -745,34 +762,34 @@ def _petal_spine_emotion(ax, emotion, emotion_score, color, angle, font, fontwei
         # Label
         angle2 = angle + 180 if -110 > angle > -260 else angle
         p4 = _rotate_point((0, 1.40 + step + offset), angle)
-        ax.annotate(s = emotion, xy = p4, rotation = angle2, ha='center', va = 'center',
+        ax.annotate(emotion, xy = p4, rotation = angle2, ha='center', va = 'center',
                     fontfamily = font, size = fontsize, fontweight = fontweight)
         
         # Score 1
         p5 = _rotate_point((0, 1.07 + step + offset), angle)
-        ax.annotate(s = "{0:.2f}".format(round(emotion_score[0],2)), xy = p5, rotation = angle2, ha='center', va = 'center',
+        ax.annotate("{0:.2f}".format(round(emotion_score[0],2)), xy = p5, rotation = angle2, ha='center', va = 'center',
                     color = color, fontfamily = font, size = fontsize, fontweight = 'regular', alpha = alpha)
         
         # Score 2
         p6 = _rotate_point((0, 1.17 + step + offset), angle)
-        ax.annotate(s = "{0:.2f}".format(round(emotion_score[1],2)), xy = p6, rotation = angle2, ha='center', va = 'center',
+        ax.annotate("{0:.2f}".format(round(emotion_score[1],2)), xy = p6, rotation = angle2, ha='center', va = 'center',
                     color = color, fontfamily = font, size = fontsize, fontweight = 'demibold', alpha = alpha)
         
         # Score 3
         p7 = _rotate_point((0, 1.27 + step + offset), angle)
-        ax.annotate(s = "{0:.2f}".format(round(emotion_score[2],2)), xy = p7, rotation = angle2, ha='center', va = 'center',
+        ax.annotate("{0:.2f}".format(round(emotion_score[2],2)), xy = p7, rotation = angle2, ha='center', va = 'center',
                     color = color, fontfamily = font, size = fontsize, fontweight = 'regular', alpha = alpha)        
         
     else:  
         # Label
         angle2 = angle + 180 if -110 > angle > -260 else angle
         p4 = _rotate_point((0, 1.23 + step + offset), angle)
-        ax.annotate(s = emotion, xy = p4, rotation = angle2, ha='center', va = 'center',
+        ax.annotate(emotion, xy = p4, rotation = angle2, ha='center', va = 'center',
                     fontfamily = font, size = fontsize, fontweight = fontweight)
         
         # Score
         p5 = _rotate_point((0, 1.1 + step + offset), angle)
-        ax.annotate(s = "{0:.2f}".format(round(emotion_score,2)), xy = p5, rotation = angle2, ha='center', va = 'center',
+        ax.annotate("{0:.2f}".format(round(emotion_score,2)), xy = p5, rotation = angle2, ha='center', va = 'center',
                     color = color, fontfamily = font, size = fontsize, fontweight = 'demibold', alpha = alpha)
         
         
@@ -850,10 +867,10 @@ def _petal_spine_dyad(ax, dyad, dyad_score, color, emotion_names, angle, font, f
     # Labels over the arcs 
     angle2 = angle + 180 if -110 > angle > -260 else angle
     p9 = _rotate_point((0, 1.7), angle - 9)
-    ax.annotate(s = emotion_names[1], xy = p9, rotation = angle2 - 8, ha='center', va = 'center', zorder = 30,
+    ax.annotate(emotion_names[1], xy = p9, rotation = angle2 - 8, ha='center', va = 'center', zorder = 30,
                 fontfamily = font, size = fontsize * .7, fontweight = 'demibold', color = color[1])
     p10 = _rotate_point((0, 1.7), angle + 9)
-    ax.annotate(s = emotion_names[0], xy = p10, rotation = angle2 + 8, ha='center', va = 'center',  zorder = 30,
+    ax.annotate(emotion_names[0], xy = p10, rotation = angle2 + 8, ha='center', va = 'center',  zorder = 30,
                 fontfamily = font, size = fontsize * .7, fontweight = 'demibold', color = color[0])
     
     
@@ -863,12 +880,12 @@ def _petal_spine_dyad(ax, dyad, dyad_score, color, emotion_names, angle, font, f
     # Label
     angle2 = angle + 180 if -110 > angle > -260 else angle
     p4 = _rotate_point((0, 1.23 + step + offset), angle)
-    ax.annotate(s = dyad, xy = p4, rotation = angle2, ha='center', va = 'center',
+    ax.annotate(dyad, xy = p4, rotation = angle2, ha='center', va = 'center',
                 fontfamily = font, size = fontsize, fontweight = fontweight)
     
     # Score
     p5 = _rotate_point((0, 1.1 + step + offset), angle)
-    ax.annotate(s = "{0:.2f}".format(round(dyad_score,2)), xy = p5, rotation = angle2, ha='center', va = 'center',
+    ax.annotate("{0:.2f}".format(round(dyad_score,2)), xy = p5, rotation = angle2, ha='center', va = 'center',
                 color = color, fontfamily = font, size = fontsize, fontweight = 'demibold', alpha = alpha)
     
     
@@ -1309,7 +1326,7 @@ def plutchik(scores,
         _, _, _, level = dyad_params(list(dyads.keys())[0]) # get the first dyad level (they all are the same)
         ll = level if level != 4 else 'opp.' # what to annotate
         xy = (-0.03, -0.03) if level != 4 else (-0.13, -0.03) # exact center of '1' or 'opp' is slightly different
-        ax.annotate(s = ll, xy = xy, fontsize = fontsize, fontfamily = font, fontweight = 'bold', zorder = 30)   
+        ax.annotate(ll, xy = xy, fontsize = fontsize, fontfamily = font, fontweight = 'bold', zorder = 30)   
         
         # Ghost dotted track that connects colored arcs
         c = plt.Circle((0, 0), 1.60, color = 'grey', alpha = .3, fill = False, zorder = -20, linestyle = 'dotted' )
