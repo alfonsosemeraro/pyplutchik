@@ -37,7 +37,6 @@ import warnings
 ## As suggested in https://shapely.readthedocs.io/en/latest/migration.html
 warnings.filterwarnings(
     action='ignore',
-    category=DeprecationWarning,
     module='descartes'
 )
 
