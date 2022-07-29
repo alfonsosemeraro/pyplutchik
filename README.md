@@ -86,5 +86,5 @@ For a documentation of all parameters and a gallery of examples see [the documen
 
 
 
-🔥 PyPlutchik 2.0 is on its way! New features include extraction of emotions from texts and check against a non-topical Lexicon. Stay tuned... 🔥
+🔥 PyPlutchik has been included in the [Matplotlib's third-party and user-contributed packages list](https://matplotlib.org/mpl-third-party/)! 🔥
 
