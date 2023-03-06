@@ -694,7 +694,7 @@ def _petal_shape_dyad(ax, emotion_score, colorA, colorB, angle, font, fontweight
     return ax
 
 
-def _petal_spine_emotion(ax, emotion, emotion_score, color, angle, font, fontweight, fontsize, highlight = 'all', offset = .15):
+def _petal_spine_emotion(ax, emotion, emotion_score, color, angle, font, fontweight, fontsize, label_format, highlight = 'all', offset = .15):
     """
     Draw the spine beneath a petal, and the annotation of emotion and emotion's value.
     The spine is a straight line from the center, of length 1.03.
@@ -729,6 +729,9 @@ def _petal_spine_emotion(ax, emotion, emotion_score, color, angle, font, fontwei
     *highlight*:
         String. 'opaque' if the petal must be shadowed, 'regular' is default.
         
+    *label_format*:
+        String. 'value' if the label is a value, "percentage" if the label is a percent, 'value' is default.
+        
     *offset*:
         Central neutral circle has radius = .15, and petals must start from there.
         
@@ -756,6 +759,7 @@ def _petal_spine_emotion(ax, emotion, emotion_score, color, angle, font, fontwei
     except:
         iterable = False
        
+    format_str = "{:.0%}" if label_format == "percent" else "{:.2f}"
         
     if iterable:
         # Label
@@ -766,17 +770,17 @@ def _petal_spine_emotion(ax, emotion, emotion_score, color, angle, font, fontwei
         
         # Score 1
         p5 = _rotate_point((0, 1.07 + step + offset), angle)
-        ax.annotate("{0:.2f}".format(round(emotion_score[0],2)), xy = p5, rotation = angle2, ha='center', va = 'center',
+        ax.annotate(format_str.format(round(emotion_score[0],2)), xy = p5, rotation = angle2, ha='center', va = 'center',
                     color = color, fontfamily = font, size = fontsize, fontweight = 'regular', alpha = alpha)
         
         # Score 2
         p6 = _rotate_point((0, 1.17 + step + offset), angle)
-        ax.annotate("{0:.2f}".format(round(emotion_score[1],2)), xy = p6, rotation = angle2, ha='center', va = 'center',
+        ax.annotate(format_str.format(round(emotion_score[1],2)), xy = p6, rotation = angle2, ha='center', va = 'center',
                     color = color, fontfamily = font, size = fontsize, fontweight = 'demibold', alpha = alpha)
         
         # Score 3
         p7 = _rotate_point((0, 1.27 + step + offset), angle)
-        ax.annotate("{0:.2f}".format(round(emotion_score[2],2)), xy = p7, rotation = angle2, ha='center', va = 'center',
+        ax.annotate(format_str.format(round(emotion_score[2],2)), xy = p7, rotation = angle2, ha='center', va = 'center',
                     color = color, fontfamily = font, size = fontsize, fontweight = 'regular', alpha = alpha)        
         
     else:  
@@ -788,12 +792,12 @@ def _petal_spine_emotion(ax, emotion, emotion_score, color, angle, font, fontwei
         
         # Score
         p5 = _rotate_point((0, 1.1 + step + offset), angle)
-        ax.annotate("{0:.2f}".format(round(emotion_score,2)), xy = p5, rotation = angle2, ha='center', va = 'center',
+        ax.annotate(format_str.format(round(emotion_score,2)), xy = p5, rotation = angle2, ha='center', va = 'center',
                     color = color, fontfamily = font, size = fontsize, fontweight = 'demibold', alpha = alpha)
         
         
         
-def _petal_spine_dyad(ax, dyad, dyad_score, color, emotion_names, angle, font, fontweight, fontsize, highlight = 'all', offset = .15):
+def _petal_spine_dyad(ax, dyad, dyad_score, color, emotion_names, angle, font, fontweight, fontsize, label_format, highlight = 'all', offset = .15):
     """
     Draw the spine beneath a petal, and the annotation of dyad and dyad's value.
     The spine is a straight line from the center, of length 1.03.
@@ -872,6 +876,7 @@ def _petal_spine_dyad(ax, dyad, dyad_score, color, emotion_names, angle, font, f
     ax.annotate(emotion_names[0], xy = p10, rotation = angle2 + 8, ha='center', va = 'center',  zorder = 30,
                 fontfamily = font, size = fontsize * .7, fontweight = 'demibold', color = color[0])
     
+    format_str = "{:.0%}" if label_format == "percent" else "{:.2f}"
     
     # Dyad label must be grey
     color = '#363636'
@@ -884,7 +889,7 @@ def _petal_spine_dyad(ax, dyad, dyad_score, color, emotion_names, angle, font, f
     
     # Score
     p5 = _rotate_point((0, 1.1 + step + offset), angle)
-    ax.annotate("{0:.2f}".format(round(dyad_score,2)), xy = p5, rotation = angle2, ha='center', va = 'center',
+    ax.annotate(format_str.format(round(dyad_score,2)), xy = p5, rotation = angle2, ha='center', va = 'center',
                 color = color, fontfamily = font, size = fontsize, fontweight = 'demibold', alpha = alpha)
     
     
@@ -953,7 +958,7 @@ def _petal_circle(ax, petal, radius, color, inner = False, highlight = 'none', o
             ax.add_patch(descartes.PolygonPatch(area, fc=(0, 0, 0, 0), ec = ecol, lw = 1.5))
     
 
-def _draw_emotion_petal(ax, emotion, emotion_score, highlight_emotions, show_intensity_labels, font, fontweight, fontsize, show_coordinates, height_width_ratio, normalize = False):
+def _draw_emotion_petal(ax, emotion, emotion_score, highlight_emotions, show_intensity_labels, font, fontweight, fontsize, show_coordinates, height_width_ratio, label_format, normalize = False):
     """
     Draw the petal and its possible sections.
     Full details at http://www.github.com/alfonsosemeraro/plutchik/tutorial.ipynb
@@ -1020,7 +1025,8 @@ def _draw_emotion_petal(ax, emotion, emotion_score, highlight_emotions, show_int
             # Draw the line and tick behind a petal 
             _petal_spine_emotion(ax = ax, emotion = emotion, emotion_score = emotion_score, 
                         color = color, angle = angle, 
-                        font = font, fontweight = fontweight, fontsize = fontsize, 
+                        font = font, fontweight = fontweight, fontsize = fontsize,
+                        label_format=label_format,
                         highlight = highlight,
                         offset = .15)
         # Draw petal
@@ -1041,6 +1047,7 @@ def _draw_emotion_petal(ax, emotion, emotion_score, highlight_emotions, show_int
             _petal_spine_emotion(ax = ax, emotion = emotion, emotion_score = label, 
                         color = color, angle = angle, 
                         font = font, fontweight = fontweight, fontsize = fontsize,
+                        label_format=label_format,
                         highlight = highlight,
                         offset = .15)
         
@@ -1054,7 +1061,7 @@ def _draw_emotion_petal(ax, emotion, emotion_score, highlight_emotions, show_int
         _outer_border(ax, length, color, angle, height_width_ratio = height_width_ratio, highlight = highlight, normalize = normalize)
         
         
-def _draw_dyad_petal(ax, dyad, dyad_score, font, fontweight, fontsize, show_coordinates, height_width_ratio, offset = .15, normalize = False):
+def _draw_dyad_petal(ax, dyad, dyad_score, font, fontweight, fontsize, show_coordinates, label_format, height_width_ratio, offset = .15, normalize = False):
     """
     Draw the petal and its possible sections.
     Full details at http://www.github.com/alfonsosemeraro/plutchik/tutorial.ipynb
@@ -1098,7 +1105,8 @@ def _draw_dyad_petal(ax, dyad, dyad_score, font, fontweight, fontsize, show_coor
         _petal_spine_dyad(ax = ax, dyad = dyad, dyad_score = dyad_score, 
                         emotion_names = emos,
                         color = color, angle = angle, 
-                        font = font, fontweight = fontweight, fontsize = fontsize, 
+                        font = font, fontweight = fontweight, fontsize = fontsize,
+                        label_format=label_format,
                         highlight = 'all',
                         offset = .15)
         
@@ -1110,7 +1118,6 @@ def _draw_dyad_petal(ax, dyad, dyad_score, font, fontweight, fontsize, show_coor
        
 
   
-    
 
 def _check_scores_kind(tags):
     """
@@ -1185,7 +1192,8 @@ def plutchik(scores,
              fontsize = 15, 
              show_coordinates = True, 
              show_ticklabels = False, 
-             highlight_emotions = 'all', 
+             highlight_emotions = 'all',
+             label_format="value",
              show_intensity_labels = 'none', 
              ticklabels_angle = 0, 
              ticklabels_size = 11, 
@@ -1258,7 +1266,7 @@ def plutchik(scores,
     """
     
     scores = {key.lower(): val for key, val in scores.items()}
-    
+
     # Check if dyads or emotions, and what kind of dyads
     score_is_emotions = _check_scores_kind(scores)
     if score_is_emotions:
@@ -1275,15 +1283,16 @@ def plutchik(scores,
         font = 'sans-serif'
         
     
-    
+
+
     # Draw coordinates (if needed) before any petal
     if show_coordinates:
         _polar_coordinates(ax, font, fontweight, fontsize, show_ticklabels, ticklabels_angle, ticklabels_size)
-            
+
     # Draw inner white circle
     _neutral_central_circle(ax)
         
-    
+
     # Emotions and dyads are mutually exclusive
     if emotions:
         emotions = {key.lower(): val for key, val in emotions.items()}
@@ -1303,7 +1312,7 @@ def plutchik(scores,
             _draw_emotion_petal(ax, emotion_score = emotions[emo], emotion = emo, 
                         font = font, fontweight = fontweight, fontsize = fontsize,
                         highlight_emotions = highlight_emotions, show_intensity_labels = show_intensity_labels,
-                        show_coordinates = show_coordinates, height_width_ratio = height_width_ratio, normalize = normalize)
+                        show_coordinates = show_coordinates, height_width_ratio = height_width_ratio, label_format=label_format, normalize = normalize)
             
     elif dyads:
         
@@ -1317,7 +1326,8 @@ def plutchik(scores,
             # Draw dyad bicolor petal
             _draw_dyad_petal(ax, dyad_score = dyads[dyad], dyad = dyad, 
                         font = font, fontweight = fontweight, fontsize = fontsize,
-                        show_coordinates = show_coordinates, height_width_ratio = height_width_ratio, 
+                        show_coordinates = show_coordinates, height_width_ratio = height_width_ratio,
+                        label_format=label_format,
                         normalize = normalize)
             
             
@@ -1331,7 +1341,6 @@ def plutchik(scores,
         c = plt.Circle((0, 0), 1.60, color = 'grey', alpha = .3, fill = False, zorder = -20, linestyle = 'dotted' )
         ax.add_artist(c)         
            
-     
     # Adjusting printable area size
     lim = 1.6 if show_coordinates else 1.2
     lim = lim + 0.1 if dyads else lim
