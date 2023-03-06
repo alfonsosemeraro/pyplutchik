@@ -759,7 +759,7 @@ def _petal_spine_emotion(ax, emotion, emotion_score, color, angle, font, fontwei
     except:
         iterable = False
        
-    format_str = "{:.0%}" if label_format == "percent" else "{:.2f}"
+    format_str = "{0:.0%}" if label_format == "percent" else "{0:.2f}"
         
     if iterable:
         # Label
@@ -876,7 +876,7 @@ def _petal_spine_dyad(ax, dyad, dyad_score, color, emotion_names, angle, font, f
     ax.annotate(emotion_names[0], xy = p10, rotation = angle2 + 8, ha='center', va = 'center',  zorder = 30,
                 fontfamily = font, size = fontsize * .7, fontweight = 'demibold', color = color[0])
     
-    format_str = "{:.0%}" if label_format == "percent" else "{:.2f}"
+    format_str = "{0:.0%}" if label_format == "percent" else "{0:.2f}"
     
     # Dyad label must be grey
     color = '#363636'
